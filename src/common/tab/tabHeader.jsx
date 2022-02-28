@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import If from '../operator/If'
+import Condition from '../operator/condition'
 import { selectTab } from './tabActions'
 
 class TabHeader extends Component {
@@ -11,7 +11,7 @@ class TabHeader extends Component {
         const visible = this.props.tab.visible[this.props.target]
 
         return (
-            <If test={visible}>
+            <Condition test={visible}>
                 <li className={selected ? 'active' : ''}>
                     <a href="javascript:;" 
                         data-toggle="tab" 
@@ -22,7 +22,7 @@ class TabHeader extends Component {
                         {this.props.label}
                     </a>
                 </li>
-            </If>
+            </Condition>
 
         )
     }
